@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문 예제</title>
+    <style>
+        body{
+            background-color: pink;
+            color: #fff;
+            font-size: 20px;
+        }
+        p{
+            margin-top: 80px;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 1px 2px 1px #000;
+        }
+        p strong{
+        font-size: 2.2em;
+        color: yellow;
+      }
+    </style>
+</head>
+<body>
+    <script>
+        let site = prompt( "구글, 네이버, 인터파크 중 즐겨 사용하는 사이트는?")
+        switch(site){
+            // case "1": 
+            // document.write( `<p>마케팅 세션은 <strong> 201호</strong> 에서 진행합니다.</p>`)
+            case "구글":
+                url= "https://www.google.com";
+            break; 
+
+            case "네이버":
+                url= "https://m.naver.com/";
+                break;
+
+            case "인터파크":
+                url= "https://travel.interpark.com/tour/package/main?utm_medium=cpc&utm_source=google&utm_campaign=tour_brand_20240701_paidsearch_pc_cpc_Troas&utm_content=consider_34&utm_term=soje_package&gad_source=1&gclid=Cj0KCQjwhb60BhClARIsABGGtw9MpNaDUANdNNDUgByg8iJB9AloHMwN7LKILe7o2ugZ2hSz-S-Mb64aAqUFEALw_wcB";
+                break;
+
+            // case "2": 
+            // document.write( `<p>개발 세션은 <strong> 202호</strong> 에서 진행합니다.</p>`)
+            // break; 
+            // case "3": 
+            // document.write( `<p>디자인 세션은 <strong> 203호</strong> 에서 진행합니다.</p>`)
+            // break;
+            default: alert("제대로 입력하세요;;");
+           
+        }
+        if(url){
+                location.href = `${url}`
+            }
+    </script>
+</body>
+</html>

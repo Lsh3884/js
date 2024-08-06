@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스크롤 이벤트</title>
+    <style>
+      body {
+        height: 1500px;
+      }
+      .container {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .img {
+        width: 100%;
+        transition: all 1.5s;
+        opacity: 0;
+      }
+      .img:hover {
+        transform: scale(1.5);
+      }
+      .view{
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>스크롤 이벤트</h1>
+    <div class="container">
+      <img src="images/Asset 3@4x.png" alt="파란토끼" class="img" />
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function handleScroll() {
+        const img = document.querySelector(".img");
+        // getBoundingClientRect() 자바스크립트 메서드
+        // 이미자 요소의 경계상자의 정보제공
+        const imgPosition = img.getBoundingClientRect().top;
+        // console.log(imgPosition)
+        const windowHeight = window.innerHeight;
+        // console.log(windowHeight);
+        if (imgPosition < windowHeight && imgPosition > 0) {
+          img.classList.add("view");
+        } else {
+          img.classList.remove("view");
+        }
+      });
+    </script>
+  </body>
+</html>

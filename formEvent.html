@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>submit 이벤트</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      #myForm {
+        width: 100%;
+        max-width: 500px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      }
+      #myForm label {
+        
+        display: block;
+        margin: 5px 0;
+      }
+      #myForm input[type="text"]{
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+      }
+      #myForm button{
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      #output{
+        max-width: 500px;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>submit 이벤트</h1>
+    <div class="form-wrap">
+      <form id="myForm">
+        <label for="name">이름 :</label>
+        <input id="name" type="text" />
+        <br />
+        <label for="email">이메일 :</label>
+        <input id="email" type="text" />
+        <br />
+        <button type="submit">폼 제출하기</button>
+        <button type="reset">폼 초기화하기</button>
+      </form>
+      <div id="output"></div>
+      <!-- js오 출력 -->
+
+      <script>
+        const form1 = document.querySelector("#myForm");
+        const output = document.querySelector("#output");
+        form1.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const nameE = document.querySelector("#name").value;
+          //   const nameValue = nameE.value
+          console.log(nameE);
+          const emailE = document.querySelector("#email").value;
+          console.log(emailE);
+
+          output.textContent = `이름:${nameE} 이메일:${emailE}`;
+        });
+        form1.addEventListener("reset", function () {
+          output.innerHTML = "초기화됨";
+        });
+      </script>
+    </div>
+  </body>
+</html>

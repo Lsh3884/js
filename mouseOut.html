@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 3px solid #333;
+      }
+      .colorChange{
+        background-color: aquamarine;
+        border-radius: 50%;
+        border: 3px solid blue;
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>마우스다운 이벤트</h1>
+    <div class="box"></div>
+    <script>
+      const boxColor = document.querySelector(".box");
+      boxColor.addEventListener("mouseout", function () {
+        // this.style.backgroundColor = "blue";
+        this.classList.toggle("colorChange")
+      });
+    </script>
+  </body>
+</html>

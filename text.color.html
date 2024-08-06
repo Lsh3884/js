@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+    <style>
+        .red{
+            color: red;
+            background-color: pink;
+        }
+        .green{
+            color: white;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">이승현</h1>
+    <p class="bgText">안녕하세요 바탕색을 바꿔주세요</p>
+    <p id="text">이름을 클릭해 보세욜</p>
+    <script>
+        /*1. 이름을 변수에 담는다*/
+        let heading = document.querySelector("#heading")
+        // // heading.addEventListener("click", function(){
+
+        // // })
+        // heading.onclick = function(){
+        //     // heading.style.color = "red"
+        //     if(heading.style.color === "red"){
+        //         heading.style.color = "#333"
+        //     }
+        //     else{heading.style.color = "red"}
+        // }
+    
+        // // ==============================
+        let bgText = document.querySelector(".bgText")
+
+        // bgText.onclick = function(){
+        //     // bgText.style.background = "red"
+        //     if(bgText.style.background === "red"){
+        //         bgText.style.background = "#fff"
+        //     }
+        //     else{bgText.style.background = "red"}
+        // }
+        // 바탕색 토글 toggle() 매서드====================
+        heading.onclick = function(){
+            heading.classList.toggle("red") 
+        }
+        bgText.onclick = function(){
+            bgText.classList.toggle("green")
+        }
+    </script>
+</body>
+</html>

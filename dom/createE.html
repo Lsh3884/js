@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Web Programming</h1>
+    </div>
+    <!-- 새로운 영역 -->
+     <div class="notice">
+        <!-- span 출력 -->
+     </div>
+    <!-- js -->
+     <script>
+        const newp = document.createElement("p")
+       
+        const txtNode = document.createTextNode("Dom document object model의 줄임말")
+        // console.log(txtNode);
+        newp.appendChild(txtNode)
+        console.log(newp);
+        document.querySelector("#container").appendChild(newp)
+
+        // h2 태그에 본인 이름 출력
+        const newH = document.createElement("h2")
+        const txtName = document.createTextNode("이승현")
+
+        newH.appendChild(txtName)
+        document.querySelector("#container").appendChild(newH)
+        // ex) ul
+        const newUl = document.createElement("ul")
+        const txtUl = document.createTextNode("목록")
+
+        newUl.appendChild(txtUl)
+        document.querySelector("#container").appendChild(newUl)
+        console.log(newUl);
+
+        // notice
+        const newSpan = document.createElement("span")
+        const txtSpan = document.createTextNode("안녕하세요")
+        newSpan.appendChild(txtSpan)
+        document.querySelector(".notice").appendChild(newSpan)
+        console.log(newSpan);
+
+
+     </script>
+</body>
+</html>

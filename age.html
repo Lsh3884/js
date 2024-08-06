@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이계산하기</title>
+    <link rel="stylesheet" href="js/main.js">
+</head>
+<style>
+    .total{
+        color: red;
+        font-size: 30px;
+    }
+    .totalA{
+        color: rgb(18, 224, 11);
+        font-size: 30px;
+    }
+</style>
+<body>
+    <script>
+        var apple = 2000;
+        var banana = 3000;
+        var total = apple + banana;
+        var totalA = apple * banana;
+        var totalB = apple - banana;
+
+        console.log(apple)
+        console.log(banana)
+
+        document.write(`<p class = total>사과랑 바나나의 합은 ${total}원 입니다 ~ ❤ </p>`)
+        document.write(`<p class = totalA>사과랑 바나나의 곱은 ${totalA} 입니다 ~</p>`)
+        document.write(`<p>사과랑 바나나의 빼기는 ${totalB} 입니다</p>`)
+    </script>
+</body>
+</html>

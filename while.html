@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>while문</title>
+  </head>
+  <body>
+    <h1>숫자클릭 예제</h1>
+    <p id="numberDisplay" class="number">0</p>
+    <script>
+      // html 요소 가져오기
+      const numberElement = document.getElementById("numberDisplay");
+      let count = 0;
+
+      numberElement.onclick = function () {
+        console.log(count);
+        count++;
+        numberElement.innerHTML = count;
+      };
+    </script>
+  </body>
+</html>

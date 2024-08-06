@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom 색상 변경</title>
+</head>
+<body>
+    <button>color change</button>
+
+    <script>
+        const btn = document.querySelector("button")
+        // 색 랜덤 기능 함수
+       function random(number){
+        return Math.floor(Math.random() * (number + 1))
+
+       }
+    //    버튼 클릭해서 색상 변경
+    btn.addEventListener("click" , function(){
+        const rndColor = `rgb(${random(255)},${random(255)},${random(255)})`
+        document.body.style.backgroundColor = rndColor
+        // console.log(rndColor);
+        
+    })
+    </script>
+</body>
+</html>

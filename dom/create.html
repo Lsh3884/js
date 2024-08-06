@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 추가</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <p id="name"></p>
+    <div class="info">
+    <!-- <img src="images/tree-2.jpg" alt="나무"> -->
+    </div>
+    
+    <button id="addItemBtn">Add Item</button>
+
+    <script>
+        const addBtn = document.querySelector("#addItemBtn")
+        const list = document.querySelector("#list")
+        const name =document.querySelector("#name")
+
+        addBtn.addEventListener("click" , ()=>{
+            // 새로운 요소를 만든다 (createElement)
+            const newItem = document.createElement("li")
+            // 요소에 들어갈 글자를 만든다
+            newItem.textContent = `Item 4`
+            // 부모에 자식을 연결한다
+            newItem.setAttribute("class" , "Item 4")
+            list.appendChild(newItem)
+            // 이름추가
+            const myName = document.createElement("li")
+            myName.textContent = `이승현`
+            myName.setAttribute("class" , "이승현")
+            list.appendChild(myName)
+
+       // img
+       const tree = document.createElement("img");
+       tree.setAttribute("src", "images/tree-2.jpg");
+       tree.setAttribute("alt", "나무");
+        info.appendChild(tree);
+        })
+
+        
+    </script>
+</body>
+</html>

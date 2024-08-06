@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change 이벤트</title>
+    <!-- textContent가 function에 따라 값을 나타내줌 -->
+</head>
+<body>
+    <h1>항목 선택</h1>
+    <select name="select" id="select">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="strawberry">딸기</option>
+        <option value="mango">망고</option>
+    </select>
+    <p id="status"></p>
+    
+    <script>
+       const select = document.querySelector("#select")
+       select.addEventListener("change" , function(){
+        const selectValue = select.value;
+        // console.log(selectValue);
+        // alert(`선택된 값: ${selectValue}`)
+        const status = document.querySelector("#status")
+        
+        // status.textContent = `선택된 값: ${selectValue}`
+        status.innerHTML = `<span>선택된 값: ${selectValue}</span>`
+        
+       })
+    </script>
+</body>
+</html>

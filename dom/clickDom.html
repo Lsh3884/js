@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 500px;
+        margin: 10px auto;
+        padding: 20px;
+      }
+      #info {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Dom을 공부 합시다 ~</h1>
+      <a href="#" id="addMore">더 보기</a>
+      <div id="info">
+        <!-- js -->
+        <!-- <img src="images/tree-1-thumb.jpg" alt="tree"> -->
+        <!-- <img src="images/Asset 3@4x.png" alt=""> -->
+      </div>
+    </div>
+
+    <!-- js -->
+    <script>
+      const addMoreLink = document.querySelector("#addMore");
+      addMoreLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        addP();
+        addMoreLink.removeEventListener("click", arguments.callee); //이벤트 리스너 제거(반복X)
+      });
+      //   info에 추가되는 함수
+      function addP() {
+        // 새로운 p
+        const newp = document.createElement("p");
+        const tetp = document.createTextNode("p가 만들어 졌습니다.");
+        const info = document.querySelector("#info");
+
+        newp.appendChild(tetp);
+        info.appendChild(newp);
+        // 이미지 태그
+        const newImg = document.createElement("img");
+        const srcNode = document.createAttribute("src");
+        const altNode = document.createAttribute("alt");
+        srcNode.value = "images/tree-1-thumb.jpg";
+        altNode.value = "tree";
+        newImg.setAttributeNode(srcNode, altNode);
+
+        console.log(newImg);
+
+        info.appendChild(newImg);
+        // img
+        const newRabit = document.createElement("img");
+        newRabit.setAttribute("src", "images/Asset 3@4x.png");
+        newRabit.setAttribute("alt", "토끼");
+        info.appendChild(newRabit);
+
+        console.log(newRabit);
+      }
+    </script>
+  </body>
+</html>
